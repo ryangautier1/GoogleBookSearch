@@ -1,6 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-import SearchForm from '../components/SearchForm';
 import ResultsWrapper from '../components/ResultWrapper';
 import API from '../utils/API';
 
