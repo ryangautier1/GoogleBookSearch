@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   getGoogleBooks: function (searchterm) {
-    console.log("searchterm :" + searchterm);
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=AIzaSyDwF8w0aaj9qUQWm4KbapIRA5aYOd3Evrs`);
+    const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${REACT_APP_API_KEY}`);
   },
 
   // Gets all books
