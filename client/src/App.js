@@ -4,6 +4,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Search from './pages/Search';
 import Jumbotron from "./components/Jumbotron";
+import Saved from "./pages/Saved"
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Switch>
           <Route exact path={["/", "/search"]}>
             <Search />
+          </Route>
+          <Route exact path={["/saved"]}>
+            <Saved />
           </Route>
           <Route>
             <NoMatch />

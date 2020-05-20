@@ -3,12 +3,12 @@ import './style.css';
 import SearchResult from '../SearchResult';
 
 function ResultsWrapper(props) {
-  console.log(props);
+  
   return (
     <div className="results-wrapper">
-      <h3>Results</h3>
+      <h3>{props.heading}</h3>
       {props.books.map(item => {return(
-        <SearchResult {...item} />
+        <SearchResult book={item} key={item.image} button={props.button} handleClick={props.handleClick} />
       )})}
     </div>
   )

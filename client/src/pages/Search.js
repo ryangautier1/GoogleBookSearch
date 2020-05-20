@@ -32,6 +32,12 @@ function Search() {
     .catch(err => console.log(err));
   }
 
+  function addBook(data) {
+    API.saveBook(data).then(() => {
+      console.log("data : " + data);
+      console.log("Saved!");
+    }).catch(err => {console.log(err)});
+  }
 
   return (
     <div>
@@ -44,7 +50,7 @@ function Search() {
         <button className="btn btn-primary" onClick={() => { runSearch() }}>Submit</button>
       </div>    
       {books.length ? (
-              <ResultsWrapper books={books}/>
+              <ResultsWrapper books={books} heading={"Results"} button={"Save"} handleClick={addBook}/>
             ) : (
               <h3 className="mt-3">No Results to Display</h3>
             )}      
