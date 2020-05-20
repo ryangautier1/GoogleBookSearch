@@ -15,12 +15,16 @@ function Search() {
   const queryRef = useRef();
   const runSearch = () => {
     API.getGoogleBooks(queryRef.current.value).then(res => {
+      var inc = 0;
       const results = res.data.items.map(item => {
+        inc++;
         return ({
+          key: inc,
           title: item.volumeInfo.title,
           author: item.volumeInfo.authors,
           info: item.volumeInfo.description,
-          image: item.volumeInfo.imageLinks.smallthumbnail
+          image: item.volumeInfo.imageLinks.thumbnail,
+          infolink :item.volumeInfo.infoLink
         });
       })
       setBooks(results);
@@ -42,7 +46,7 @@ function Search() {
       {books.length ? (
               <ResultsWrapper books={books}/>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="mt-3">No Results to Display</h3>
             )}      
     </div>
   )

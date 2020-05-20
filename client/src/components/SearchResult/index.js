@@ -4,7 +4,11 @@ import './style.css';
 function SearchResult(props) {
   return (
     <div className="search-result">
-      <button type="button" className="float-right btn btn-primary">View</button>
+ 
+      <a href={props.infolink}>
+        <button type="button" className="float-right btn btn-primary">View</button>
+      </a>
+      
       <button type="button" className="float-right btn btn-info mr-2">Save</button>
       <h4>{props.title}</h4>
       <h5>{props.author}</h5>
